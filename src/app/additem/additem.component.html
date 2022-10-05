@@ -1,0 +1,10 @@
+<div class="add">
+    <div class="textadd">
+        <form [formGroup]="addUserForm"  class="add1">
+            <input type="text" class="nameadd" formControlName='name'placeholder='name'/>
+            <input type="text" class="nameadd" formControlName='age' placeholder='age'/>
+        </form>
+        <button type="submit" class="butadd" (click)="addUser()">Add</button>
+    </div>
+   
+  </div>
