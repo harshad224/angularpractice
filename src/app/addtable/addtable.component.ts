@@ -16,18 +16,19 @@ studentlist:any[]=[]
   constructor(private userSer:UserserviceService) { }
 
   ngOnInit(): void {
-    // this.userSer.getitem().subscribe((data:any)=>{
-    //   this.studentlist=[...data]
-    //   console.log("Table data",data)
-    // })
+ 
+    this.getitems()
 
     this.userSer.user.subscribe((data:any)=>{
-      this.studentlist=[...data]
+      this.studentlist.push(...data)
     })
 
-
-    
   }
 
+  getitems(){
+    this.userSer.getitem().subscribe((data:any)=>{
+      this.userSer.user.next(data)
+    })
+  }
 
 }

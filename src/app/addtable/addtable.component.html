@@ -4,8 +4,8 @@
         <th>Name</th>
         <th>Age</th>
     </tr>
-    <tr *ngFor="let item of studentlist">
-        <td>{{item.id}}</td>
+    <tr *ngFor="let item of studentlist;let i=index">
+        <td>{{i+1}}</td>
         <td>{{item.name}}</td>
         <td>{{item.age}}</td>
     </tr>

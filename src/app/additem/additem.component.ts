@@ -20,22 +20,15 @@ export class AdditemComponent implements OnInit {
 'age':new FormControl(null,Validators.required)
     })
 
-    this.getitems()
+   
   }
 
   addUser(){
     const {value}=this.addUserForm
     let ar:any=[value]
-this.userSer.additem(value).subscribe((data:any)=>{
+this.userSer.additem(value).subscribe(()=>{
   this.userSer.user.next(ar)
 })
 
-this.getitems()
-  }
-
-  getitems(){
-    this.userSer.getitem().subscribe((data:any)=>{
-      this.userSer.user.next(data)
-    })
   }
 }
